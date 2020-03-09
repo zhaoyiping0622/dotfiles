@@ -8,7 +8,7 @@ export ZSH="/home/zhaoyiping/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="gentoo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,5 +103,23 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+function setproxy()
+{
+    export http_proxy="socks5:127.0.0.1:1080"
+    export HTTP_PROXY="socks5:127.0.0.1:1080"
+    export https_proxy="socks5:127.0.0.1:1080"
+    export HTTPS_PROXY="socks5:127.0.0.1:1080"
+    export ALL_PROXY="socks5:127.0.0.1:1080"
+}
+
+function unsetproxy()
+{
+    unset http_proxy
+    unset HTTP_PROXY
+    unset https_proxy
+    unset HTTPS_PROXY
+    unset ALL_PROXY
+}
 
 bindkey -M viins 'kj' vi-cmd-mode
