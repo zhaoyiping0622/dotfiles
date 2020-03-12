@@ -104,6 +104,21 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/zhaoyiping/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/zhaoyiping/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/zhaoyiping/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/zhaoyiping/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
 function setproxy()
 {
     export http_proxy="socks5://127.0.0.1:1080"
@@ -123,3 +138,9 @@ function unsetproxy()
 }
 
 bindkey -M viins 'kj' vi-cmd-mode
+
+if [[ `uname -a | grep "Microsoft"` != "" ]]; then
+# in Windows subsystem for Linux
+    alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+    alias typora="/mnt/c/Program\ Files/Typora/bin/typora.exe"
+fi
