@@ -7,6 +7,7 @@ set expandtab
 set autoindent
 set backspace=2
 set ff=unix
+set ignorecase
 vnoremap kj <ESC>
 inoremap kj <ESC>
 
