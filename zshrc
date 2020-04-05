@@ -144,3 +144,10 @@ if [[ `uname -a | grep "Microsoft"` != "" ]]; then
     alias edge="/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
     alias typora="/mnt/c/Program\ Files/Typora/bin/typora.exe"
 fi
+alias tran="trans :zh-cn"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export HADOOP_HOME=/opt/hadoop-3.1.2
+export PATH=$JAVA_HOME/bin:$HADOOP_HOME/bin:$PATH
+export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+alias sshali="ssh zhaoyiping.xyz"
+alias sshuawei="ssh huawei.zhaoyiping.xyz"
